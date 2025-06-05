@@ -6,30 +6,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book-Store</title>
     <link rel="stylesheet" href="styles/style.css">
-
+    <script src="scripts/main.js"></script>
 </head>
 
 <body>
     <header>
         <nav class="navbar">
-            <div class="navbar">
-                <div class="logo">
-                    <img src="asstes/images/logo/logo.png" alt="Book Store Logo">
-                </div>
+            <div class="logo">
+                <img src="asstes/images/logo/logo.png" alt="Book Store Logo">
+                BOOKSTORE
             </div>
-            <ul class="nav-links">
+
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Shop</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="signup.html"">Sign Up</a></li>
-                <li><a href=""><img class="search" src="asstes/images/icon/search.png" alt=""></a></li>
-                <li><a href=""><img src="asstes/images/icon/cart.png" alt=""></a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/49/49116.png" alt="Search"></a></li>
+                <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Cart"></a></li>
             </ul>
         </nav>
-        <div class="hero" style="background-image: url(asstes/box-image/image.jpg);">
 
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Discover Your</h1>
+                <h1>Next Favorite Book</h1>
+                <a href="#" class="hero-btn">Browse Books</a>
+            </div>
         </div>
     </header>
+
+    <main>
+        <h1>Featured Books</h1>
+        <div class="books-container">
+            <div class="book-box">
+                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Book Cover">
+                <h2>The Great Adventure</h2>
+                <div class="price">Rs.400</div>
+                <div class="btn">
+                    Add To Cart
+                </div>
+            </div>
+            <div class="book-box">
+                <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Book Cover">
+                <h2>Mystery Tales</h2>
+                <div class="price">Rs.350</div>
+                <div class="btn">
+                    Add To Cart
+                </div>
+            </div>
+            <div class="book-box">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Book Cover">
+                <h2>Science Fiction</h2>
+                <div class="price">Rs.450</div>
+                <div class="btn">
+                    Add To Cart
+                </div>
+            </div>
+            <div class="book-box">
+                <img src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Book Cover">
+                <h2>Classic Literature</h2>
+                <div class="price">Rs.300</div>
+                <div class="btn">
+                    Add To Cart
+                </div>
+            </div>
+            <div class="book-box">
+                <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Book Cover">
+                <h2>Modern Romance</h2>
+                <div class="price">Rs.380</div>
+                <div class="btn">
+                    Add To Cart
+                </div>
+            </div>
+            <div class="book-box">
+                <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Book Cover">
+                <h2>History Chronicles</h2>
+                <div class="price">Rs.420</div>
+                <div class="btn">
+                    Add To Cart
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
