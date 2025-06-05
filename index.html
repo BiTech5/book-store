@@ -6,30 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book-Store</title>
     <link rel="stylesheet" href="styles/style.css">
-
+    <script src="scripts/main.js"></script>
 </head>
 
 <body>
     <header>
         <nav class="navbar">
-            <div class="navbar">
-                <div class="logo">
-                    <img src="asstes/images/logo/logo.png" alt="Book Store Logo">
-                </div>
+            <div class="logo">
+                <img src="asstes/images/logo/logo.png" alt="Book Store Logo">
+                BOOKSTORE
             </div>
-            <ul class="nav-links">
+
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Shop</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="signup.html"">Sign Up</a></li>
-                <li><a href=""><img class="search" src="asstes/images/icon/search.png" alt=""></a></li>
-                <li><a href=""><img src="asstes/images/icon/cart.png" alt=""></a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/49/49116.png" alt="Search"></a></li>
+                <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Cart"></a></li>
             </ul>
         </nav>
-        <div class="hero" style="background-image: url(asstes/box-image/image.jpg);">
 
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Discover Your</h1>
+                <h1>Next Favorite Book</h1>
+                <a href="#" class="hero-btn">Browse Books</a>
+            </div>
         </div>
     </header>
+
+        
 </body>
 
 </html>
