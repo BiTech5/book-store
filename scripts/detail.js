@@ -16,16 +16,18 @@ async function fetchBookDetails() {
     const stars = '★'.repeat(Math.floor(book.rating)) + '☆'.repeat(5 - Math.floor(book.rating));
 
     detailContainer.innerHTML = `
-      <img src="${book.image}" alt="${book.title}" class="book-image"/>
-      <div class="book-info">
-        <h1>${book.title}</h1>
-        <p class="author"><strong>Author:</strong> ${book.author}</p>
-        <p class="category"><strong>Category:</strong> ${capitalize(book.category)}</p>
-        <p class="price"><strong>Price:</strong> Rs. ${book.price}</p>
-        <p class="rating"><span class="stars">${stars}</span> (${book.rating})</p>
-        <p class="description">${book.description}</p>
-        <div class="action-buttons">
-          <button class="btn btn-primary" onclick="addToCart(${book.id})">Add to Cart</button>
+      <div class="book-detail-card">
+        <img src="${book.image}" alt="${book.title}" class="book-image"/>
+        <div class="book-info">
+          <h1>${book.title}</h1>
+          <p><strong>Author:</strong> ${book.author}</p>
+          <p><strong>Category:</strong> ${capitalize(book.category)}</p>
+          <p class="price">Rs. ${book.price}</p>
+          <p class="rating"><span class="stars">${stars}</span> (${book.rating})</p>
+          <p class="description">${book.description}</p>
+          <div class="action-buttons">
+            <button class="btn btn-primary" onclick="addToCart(${book.id})">Add to Cart</button>
+          </div>
         </div>
       </div>
     `;
@@ -47,7 +49,12 @@ function showNotification(message) {
   const note = document.getElementById("notification");
   note.textContent = message;
   note.classList.remove("hidden");
-  setTimeout(() => note.classList.add("hidden"), 2500);
+  note.classList.add("show");
+
+  setTimeout(() => {
+    note.classList.remove("show");
+    note.classList.add("hidden");
+  }, 2500);
 }
 
 window.onload = fetchBookDetails;
