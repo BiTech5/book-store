@@ -7,19 +7,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
-        const storedUser = JSON.parse(localStorage.getItem("user"));
+        const users = JSON.parse(localStorage.getItem("users")) || [];
 
-        if (!storedUser) {
-            alert("No account found. Please sign up first.");
-            return;
-        }
+        const user = users.find(u => u.email === email && u.password === password);
 
-        if (storedUser.email === email && storedUser.password === password) {
+        if (user) {
+            localStorage.setItem("user", JSON.stringify(user));
             localStorage.setItem("isLoggedIn", "true");
             alert("Login successful!");
-            window.location.href = "index.html"; 
+            window.location.href = "index.html";
         } else {
             alert("Incorrect email or password.");
         }
+
     });
 });
