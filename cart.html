@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Cart</title>
+    <link rel="stylesheet" href="styles/cart.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="asstes/images/logo/logo.png" alt="Book Store Logo">
+                BOOKSTORE
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="cart.html"><img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Cart"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="cart-container">
+        <h1>Your Cart</h1>
+        <table id="cartTable">
+            <thead>
+                <tr>
+                    <th>Book</th>
+                    <th>Author</th>
+                    <th>Price (Rs)</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="cartBody"></tbody>
+        </table>
+        <div class="total-section">
+            <strong>Grand Total: Rs <span id="grandTotal">0</span></strong>
+        </div>
+    </div>
+
+    <script src="scripts/cart.js"></script>
+</body>
+
+</html>
