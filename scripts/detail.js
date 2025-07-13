@@ -1,42 +1,53 @@
 const params = new URLSearchParams(window.location.search);
 const bookId = parseInt(params.get("id"));
+const detailContainer = document.getElementById("bookDetail");
 
-const booksData = [
-    {
-        id: 1,
-        title: "The Great Adventure",
-        author: "John Smith",
-        category: "fiction",
-        price: 400,
-        rating: 4.5,
-        image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        description: "An epic tale of courage and discovery in uncharted territories."
-    },
-];
+async function fetchBookDetails() {
+  try {
+    const res = await fetch("data/books.json");
+    const books = await res.json();
+    const book = books.find(b => b.id === bookId);
 
-const book = booksData.find(b => b.id === bookId);
+    if (!book) {
+      detailContainer.innerHTML = `<p class="not-found">Sorry, book not found.</p>`;
+      return;
+    }
 
-if (book) {
-    const container = document.getElementById("bookDetail");
-    container.innerHTML = `
-        <img src="${book.image}" alt="${book.title}" />
-  <div class="book-info">
-    <h1>${book.title}</h1>
-    <div class="author">Author: ${book.author}</div>
-    <div class="category">Category: ${book.category}</div>
-    <div class="price">Rs. ${book.price}</div>
-    <div class="rating">
-      <span class="stars">★★★★☆</span> (${book.rating})
-    </div>
-    <div class="description">
-    ${book.description}
-    </div>
-    <div class="action-buttons">
-      <button class="btn btn-primary">Add to Cart</button>
-      <a href="shop.html" class="btn btn-secondary">Back to Shop</a>
-    </div>
-  </div>
-      `;
-} else {
-    document.getElementById("bookDetail").textContent = "Book not found.";
+    const stars = '★'.repeat(Math.floor(book.rating)) + '☆'.repeat(5 - Math.floor(book.rating));
+
+    detailContainer.innerHTML = `
+      <img src="${book.image}" alt="${book.title}" class="book-image"/>
+      <div class="book-info">
+        <h1>${book.title}</h1>
+        <p class="author"><strong>Author:</strong> ${book.author}</p>
+        <p class="category"><strong>Category:</strong> ${capitalize(book.category)}</p>
+        <p class="price"><strong>Price:</strong> Rs. ${book.price}</p>
+        <p class="rating"><span class="stars">${stars}</span> (${book.rating})</p>
+        <p class="description">${book.description}</p>
+        <div class="action-buttons">
+          <button class="btn btn-primary" onclick="addToCart(${book.id})">Add to Cart</button>
+        </div>
+      </div>
+    `;
+  } catch (error) {
+    detailContainer.innerHTML = `<p class="not-found">Failed to load book data.</p>`;
+  }
 }
+
+function capitalize(text) {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+function addToCart(bookId) {
+  showNotification("✅ Book added to cart!");
+  console.log(`Book ${bookId} added to cart`);
+}
+
+function showNotification(message) {
+  const note = document.getElementById("notification");
+  note.textContent = message;
+  note.classList.remove("hidden");
+  setTimeout(() => note.classList.add("hidden"), 2500);
+}
+
+window.onload = fetchBookDetails;

@@ -3,15 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Book Details</title>
- <link rel="stylesheet" href="styles/detail.css">
+  <title>Book Detail - Bookstore</title>
+  <link rel="stylesheet" href="styles/detail.css" />
 </head>
 <body>
-  <div class="book-detail-container" id="bookDetail">
-  </div>
+  <header>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="asstes/images/logo/logo.png" alt="Book Store Logo">
+            BOOKSTORE
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/49/49116.png" alt="Search"></a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Cart"></a></li>
+        </ul>
+    </nav>
+</header>
+  <a href="shop.html" class="btn-back">← Back to Shop</a>
 
-  <script src="scripts/detail.js">
-    
-  </script>
+  <main class="book-detail-container" id="bookDetail">
+  </main>
+
+  <script src="scripts/detail.js"></script>
 </body>
 </html>
