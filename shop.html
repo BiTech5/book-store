@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Book Store</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="asstes/images/logo/logo.png" alt="Book Store Logo">
+                BOOKSTORE
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/49/49116.png" alt="Search"></a></li>
+                <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Cart"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="shop-header">
+        <h1>Our Book Collection</h1>
+        <p>Discover your next great read from our carefully curated selection</p>
+    </div>
+
+    <div class="shop-container">
+        <aside class="sidebar">
+            <h3>Search & Filter</h3>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search books..." onkeyup="searchBooks()">
+            </div>
+
+            <div class="filter-section">
+                <h4>Categories</h4>
+                <div class="category-filter">
+                    <button class="category-btn active" onclick="filterByCategory('all')">All Books</button>
+                    <button class="category-btn" onclick="filterByCategory('fiction')">Fiction</button>
+                    <button class="category-btn" onclick="filterByCategory('mystery')">Mystery</button>
+                    <button class="category-btn" onclick="filterByCategory('sci-fi')">Science Fiction</button>
+                    <button class="category-btn" onclick="filterByCategory('romance')">Romance</button>
+                    <button class="category-btn" onclick="filterByCategory('history')">History</button>
+                    <button class="category-btn" onclick="filterByCategory('biography')">Biography</button>
+                    <button class="category-btn" onclick="filterByCategory('self-help')">Self Help</button>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h4>Price Range</h4>
+                <div class="price-filter">
+                    <div class="price-range">
+                        <input type="number" id="minPrice" placeholder="Min" min="0" max="1000">
+                        <span>-</span>
+                        <input type="number" id="maxPrice" placeholder="Max" min="0" max="1000">
+                    </div>
+                    <button class="apply-filter" onclick="applyPriceFilter()">Apply Filter</button>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="shop-controls">
+                <div class="results-count">
+                    <span id="resultCount">24</span> books found
+                </div>
+                <div class="sort-controls">
+                    <label for="sortBy">Sort by:</label>
+                    <select id="sortBy" onchange="sortBooks()">
+                        <option value="name">Name</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Rating</option>
+                        <option value="newest">Newest First</option>
+                    </select>
+                </div>
+                <div class="view-toggle">
+                    <button class="view-btn active" onclick="changeView('grid')">Grid</button>
+                    <button class="view-btn" onclick="changeView('list')">List</button>
+                </div>
+            </div>
+
+            <div class="books-grid" id="booksGrid">
+                <!-- Books will be populated by JavaScript -->
+            </div>
+
+            <div class="pagination" id="pagination">
+                <!-- Pagination will be populated by JavaScript -->
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
