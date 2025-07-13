@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Book Store</title>
+    <link rel="stylesheet" href="styles/about.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="asstes/images/logo/logo.png" alt="Book Store Logo">
+                BOOKSTORE
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/49/49116.png" alt="Search"></a></li>
+                <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Cart"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="about-hero">
+        <div class="about-hero-content">
+            <h1>About Our Bookstore</h1>
+            <p>Connecting readers with their perfect books since 2010</p>
+        </div>
+    </div>
+
+    <div class="about-content">
+        <div class="about-section">
+            <h2>Our Story</h2>
+            <p>Founded in 2010, our bookstore began as a small local shop with a simple mission: to bring the joy of
+                reading to our community. What started as a passion project has grown into a beloved destination for
+                book lovers of all ages.</p>
+            <p>We believe that every book has the power to transform lives, spark imagination, and create connections
+                between people. Our carefully curated collection spans across genres, from timeless classics to
+                contemporary bestsellers, ensuring there's something for every reader.</p>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Mission</h2>
+            <p>To foster a love of reading in our community by providing access to diverse, high-quality books and
+                creating a welcoming space where stories come to life. We're committed to supporting authors,
+                publishers, and most importantly, our readers in their literary journey.</p>
+        </div>
+    </div>
+
+    <div class="stats-section">
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-number">50,000+</div>
+                <div class="stat-label">Books Available</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">15,000+</div>
+                <div class="stat-label">Happy Customers</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">13</div>
+                <div class="stat-label">Years of Service</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Events Hosted</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-content">
+        <div class="team-section">
+            <h2>Meet Our Team</h2>
+            <div class="team-container">
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                        alt="omkar">
+                    <h3>Omkar</h3>
+                    <div class="role">Store Manager</div>
+                    <p>Sarah has been with us since day one, bringing her passion for literature and exceptional
+                        customer service to create memorable experiences for every visitor.</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                        alt="unisha">
+                    <h3>Unisha</h3>
+                    <div class="role">Book Curator</div>
+                    <p>Michael's extensive knowledge of literature helps us select the perfect books for our collection,
+                        ensuring we always have something special for our customers.</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b2e0c615?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                        alt="biki">
+                    <h3>Biki</h3>
+                    <div class="role">Events Coordinator</div>
+                    <p>Emma organizes our book clubs, author readings, and community events, bringing people together
+                        through the shared love of reading.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="values-section">
+        <div class="values-container">
+            <h2 style="text-align: center; margin-bottom: 20px; font-size: 2.2rem; color: #333;">Our Values</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <h3>Quality</h3>
+                    <p>We carefully select every book in our collection, ensuring our customers have access to the
+                        finest literature and most engaging stories.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Community</h3>
+                    <p>We believe in the power of books to bring people together and foster meaningful connections
+                        within our community.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Accessibility</h3>
+                    <p>Reading should be accessible to everyone. We offer books at various price points and regularly
+                        host free community events.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Passion</h3>
+                    <p>Our love for books drives everything we do. We're here to share that passion and help you
+                        discover your next great read.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <h2>Ready to Discover Your Next Great Read?</h2>
+        <p>Visit our store today and let us help you find the perfect book</p>
+        <a href="index.html" class="cta-btn">Browse Our Collection</a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.querySelector('.menu-toggle');
+
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
