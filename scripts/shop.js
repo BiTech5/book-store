@@ -308,8 +308,7 @@ function addToCart(bookId) {
 }
 
 function viewBookDetails(bookId) {
-    const book = booksData.find(b => b.id === bookId);
-    alert(`Viewing details for "${book.title}"\n\nAuthor: ${book.author}\nPrice: Rs.${book.price}\n\nDescription:\n${book.description}`);
+    window.location.href = `book-detail.html?id=${bookId}`;
 }
 
 function toggleMenu() {

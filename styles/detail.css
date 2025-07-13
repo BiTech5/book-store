@@ -1,0 +1,128 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    padding: 40px 20px;
+}
+
+/* Container */
+.book-detail-container {
+    max-width: 1100px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* Book Image */
+.book-detail-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex: 1 1 350px;
+}
+
+/* Book Info */
+.book-info {
+    flex: 1 1 500px;
+}
+
+.book-info h1 {
+    font-size: 2.4rem;
+    margin-bottom: 15px;
+    color: rgba(173, 68, 30, 0.916);
+}
+
+.book-info .author,
+.book-info .category,
+.book-info .price,
+.book-info .rating {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.book-info .price {
+    font-size: 1.4rem;
+    color: #000;
+    font-weight: bold;
+}
+
+.book-info .rating .stars {
+    color: #ffc107;
+    font-size: 1.2rem;
+}
+
+.book-info .description {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #444;
+}
+
+/* Action Buttons */
+.action-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: rgba(173, 68, 30, 0.916);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: rgba(210, 92, 48, 0.916);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: rgba(173, 68, 30, 0.916);
+    border: 2px solid rgba(173, 68, 30, 0.916);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(173, 68, 30, 0.1);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .book-detail-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .book-info h1 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+}
