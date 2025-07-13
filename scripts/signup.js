@@ -1,15 +1,17 @@
-const signupForm = document.getElementById('signupForm');
+document.addEventListener("DOMContentLoaded", () => {
+    const signupForm = document.getElementById("signupForm");
 
-signupForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+    signupForm.addEventListener("submit", (e) => {
+        e.preventDefault();
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('mail').value;
-    const password = document.getElementById('password').value;
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("mail").value;
+        const password = document.getElementById("password").value;
 
-    const user = { name, email, password };
+        const user = { name, email, password };
+        localStorage.setItem("user", JSON.stringify(user));
 
-    localStorage.setItem('user', JSON.stringify(user));
-    alert("Account created successfully! Please login.");
-    window.location.href = 'login.html';
+        alert("Account created successfully!");
+        window.location.href = "login.html";
+    });
 });
