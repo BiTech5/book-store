@@ -184,9 +184,35 @@ function updateResultCount() {
 }
 
 function addToCart(bookId) {
+    const user = JSON.parse(localStorage.getItem("user"));
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+    if (!user || !isLoggedIn) {
+        alert("Please login to add books to your cart.");
+        window.location.href = "login.html";
+        return;
+    }
+
     const book = booksData.find(b => b.id === bookId);
-    alert(`"${book.title}" has been added to your cart.`);
+    if (!book) {
+        alert("Book not found!");
+        return;
+    }
+
+    const cartKey = `cart_${user.email}`;
+    const cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+
+    const existing = cart.find(item => item.id === book.id);
+    if (existing) {
+        existing.quantity += 1;
+    } else {
+        cart.push({ ...book, quantity: 1 });
+    }
+
+    localStorage.setItem(cartKey, JSON.stringify(cart));
+    alert(`✅ "${book.title}" has been added to your cart.`);
 }
+
 
 function viewBookDetails(bookId) {
     window.location.href = `book-detail.html?id=${bookId}`;
