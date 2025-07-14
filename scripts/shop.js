@@ -213,7 +213,6 @@ function addToCart(bookId) {
     alert(`✅ "${book.title}" has been added to your cart.`);
 }
 
-
 function viewBookDetails(bookId) {
     window.location.href = `book-detail.html?id=${bookId}`;
 }
