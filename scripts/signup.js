@@ -13,16 +13,22 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        const emailRegex = /^[a-zA-Z][a-zA-Z._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        const usernamePart = email.split('@')[0];
+        const nameRegex = /^[a-zA-Z\s]+$/;
+        if (!nameRegex.test(name)) {
+            alert("Name should only contain letters and spaces. No numbers or special characters allowed.");
+            return;
+        }
 
+        const emailRegex = /^[a-zA-Z][a-zA-Z._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!emailRegex.test(email)) {
             alert("Invalid email format or email starts with a number.");
             return;
         }
 
-        if (/\d/.test(usernamePart)) {
-            alert("Email username should not contain any number.");
+        const usernamePart = email.split('@')[0];
+        const usernameRegex = /^[a-zA-Z]+$/;
+        if (!usernameRegex.test(usernamePart)) {
+            alert("Email username must contain only alphabets (no numbers or special characters).");
             return;
         }
 
