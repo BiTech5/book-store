@@ -18,9 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         `
           : `
         <li><a href="signup.html">Sign Up</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="cart.html"><img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Cart"></a></li>
-        `
+        <li><a href="login.html">Login</a></li>`
       }
     `;
   
